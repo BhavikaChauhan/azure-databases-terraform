@@ -1,0 +1,5 @@
+sql_server_name      = "my-sql-server"
+sql_database_name    = "mydb"
+cosmos_account_name  = "mycosmosdb"
+storage_account_name = "mystorageacct123"
+location             = "eastus"

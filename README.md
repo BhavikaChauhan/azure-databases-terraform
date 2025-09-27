@@ -3,7 +3,8 @@ Azure Databases with Terraform (SQL + Cosmos DB + Blob Storage)
 This project demonstrates how to provision Azure SQL Database, Cosmos DB (NoSQL), and Blob Storage in a modular, production-ready Terraform setup.
 It also uses an Azure Storage Account backend for Terraform state management.
 
-📂 Repository Structure
+📂 Repository Structure 
+```
 azure-databases-terraform/
 │── backend.tf              # Remote backend configuration (uses Azure Storage)
 │── provider.tf             # Provider setup
@@ -29,6 +30,7 @@ azure-databases-terraform/
 │         ├── main.tf
 │         ├── variables.tf
 │         └── outputs.tf
+```
 
 🏗️ Architecture
 flowchart LR

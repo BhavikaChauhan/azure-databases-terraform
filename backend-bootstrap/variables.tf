@@ -1,19 +1,23 @@
+variable "resource_group_name" {
+  description = "Resource group for Terraform backend"
+  type        = string
+  default     = "tfstate-rg"
+}
+
 variable "location" {
-  type    = string
-  default = "eastus"
+  description = "Azure region"
+  type        = string
+  default     = "eastus"
 }
 
-variable "backend_rg_name" {
-  type    = string
-  default = "terraform-backend-rg"
-}
-
-variable "backend_storage_name" {
-  type    = string
-  default = "tfbackendstorage"
+variable "storage_account_name" {
+  description = "Globally unique storage account name"
+  type        = string
+  default     = "tfstatebhavika123"
 }
 
 variable "container_name" {
-  type    = string
-  default = "tfstate"
+  description = "Storage container name for state files"
+  type        = string
+  default     = "tfstate"
 }

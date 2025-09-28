@@ -4,6 +4,7 @@ resource "azurerm_cosmosdb_account" "cosmos" {
   resource_group_name = var.resource_group_name
   offer_type          = "Standard"
   kind                = "GlobalDocumentDB"
+}
   consistency_policy {
     consistency_level = "Session"
   }

@@ -11,8 +11,10 @@ resource "azurerm_cosmosdb_account" "cosmos" {
     location          = var.location
     failover_priority = 0
   }
-  capabilities = []
+ capabilities {
+  name = "EnableServerless"
 }
+
 
 resource "azurerm_cosmosdb_sql_database" "db" {
   name                = var.cosmos_database_name

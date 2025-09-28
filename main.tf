@@ -25,6 +25,5 @@ module "sql" {
   location             = var.location
   sql_server_name      = var.sql_server_name
   sql_database_name    = var.sql_database_name
-  sql_admin_username   = var.sql_admin_username
   sql_admin_password   = var.sql_admin_password
 }

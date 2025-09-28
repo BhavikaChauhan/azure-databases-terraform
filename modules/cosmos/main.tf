@@ -1,5 +1,5 @@
-resource "azurerm_cosmosdb_account" "cosmos" {
-  name                = "cosmos-${var.resource_group_name}"
+resource "azurerm_cosmosdb_account" "this" {
+  name                = var.cosmos_account_name
   location            = var.location
   resource_group_name = var.resource_group_name
   offer_type          = "Standard"
@@ -16,15 +16,16 @@ resource "azurerm_cosmosdb_account" "cosmos" {
 }
 
 resource "azurerm_cosmosdb_sql_database" "db" {
-  name                = "appdb"
+  name                = var.cosmos_database_name
   resource_group_name = var.resource_group_name
-  account_name        = azurerm_cosmosdb_account.cosmos.name
+  account_name        = azurerm_cosmosdb_account.this.name
 }
 
 resource "azurerm_cosmosdb_sql_container" "container" {
-  name                = "items"
+  name                = var.cosmos_container_name
   resource_group_name = var.resource_group_name
-  account_name        = azurerm_cosmosdb_account.cosmos.name
+  account_name        = azurerm_cosmosdb_account.this.name
   database_name       = azurerm_cosmosdb_sql_database.db.name
-  partition_key_path  = "/id"
+  partition_key_paths = ["/id"]
+  throughput          = 400
 }

@@ -26,12 +26,6 @@ variable "sql_admin_username" {
   default     = "sqladmin"
 }
 
-variable "sql_admin_password" {
-  description = "SQL admin password (sensitive)"
-  type        = string
-  sensitive   = true
-}
-
 variable "cosmos_account_name" {
   description = "Cosmos DB account name (lowercase, 3-44 chars, letters/numbers/hyphen allowed)"
   type        = string

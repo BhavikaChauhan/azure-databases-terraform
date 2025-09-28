@@ -1,20 +1,11 @@
 variable "sql_admin_password" {
-  type      = string
-  sensitive = true
+  description = "SQL admin password"
+  type        = string
+  sensitive   = true
 }
 
-variable "sql_server_name" {
-  type = string
-}
-
-variable "sql_database_name" {
-  type = string
-}
-
-variable "resource_group_name" {
-  type = string
-}
-
-variable "location" {
-  type = string
+variable "sql_admin_username" {
+  description = "SQL admin username"
+  type        = string
+  default     = "sqladmin"
 }
